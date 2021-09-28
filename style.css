@@ -4,13 +4,20 @@
   --primary-color: purple;
 }
 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
-  text-align: center;
-  margin: auto;
-  width: 60%;
-  padding: 2rem;
   font-family: "Raleway", sans-serif;
-  background-color: white;
+  min-width: 100vw;
+}
+
+.container{
+    margin: 4rem auto 7rem;
+    text-align: center;
 }
 
 h1 {
@@ -41,31 +48,31 @@ button {
   border-radius: 4px;
   font-size: large;
   margin-top: 1rem;
+  cursor: pointer;
 }
 
-table{
-    display: table;
-    border: solid 1px var(--primary-color);
-    border-collapse: collapse;
-    box-sizing: border-box;
-    border-spacing: 2px;
+.notes-table{
     width: 50%;
+    text-align: justify;
+    border-collapse: collapse;
     margin: auto;
 }
 
 caption{
-    padding: 1rem;
-    font-size: larger;
-    font-weight: bold;
+    margin: 1rem auto;
+    font-size: x-large;
+    font-weight: 500;
 }
 
-th, td{
-    border: solid 1px var(--primary-color);
-    padding: 0.4rem;
+th,td{
+    border: 2px solid var(--primary-color);
     border-collapse: collapse;
+    width: 0%;
+    padding: 0.4rem;
 }
 
-th{
-    font-weight: bolder;
-    font-size: large;
+footer {
+  bottom: 0;
+  display: block;
+  text-align: center;
 }

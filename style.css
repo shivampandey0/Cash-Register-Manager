@@ -36,6 +36,7 @@ input {
   height: 30px;
   border: solid 2px var(--primary-color);
   border-radius: 8px;
+  text-align: center;
 }
 
 button {

@@ -39,9 +39,10 @@ input {
   text-align: center;
 }
 
-#cash-block{
+#cash-block, .check-button{
   display: none;
 }
+
 
 button {
   display: block;
@@ -56,11 +57,13 @@ button {
   cursor: pointer;
 }
 
+
 .notes-table{
     width: 50%;
     text-align: justify;
     border-collapse: collapse;
     margin: auto;
+    display: none;
 }
 
 caption{

@@ -52,7 +52,7 @@ function calculateNotes(amountToGive) {
         noOfNotes[i].innerText = note;      
     }
 
-    notesTable.style.display = "block";
+    notesTable.style.display = "table";
 
 }
 

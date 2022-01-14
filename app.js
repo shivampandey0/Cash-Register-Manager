@@ -7,62 +7,57 @@ const errorMessage = document.querySelector(".message")
 const cashBlock = document.querySelector("#cash-block")
 const noOfNotes = document.querySelectorAll(".no-of-notes")
 
-const availableNotes = [2000,500,200,100,50,20,10,5,2,1]
+const availableNotes = [2000, 500, 200, 100, 50, 20, 10, 5, 2, 1]
 
-nextButton.addEventListener("click",showFields);
-checkButton.addEventListener("click",checkReturns)
-
-function showFields() {
+const showFields = () => {
     hideMessage();
     if (billAmountInput.value) {
         cashBlock.style.display = "block";
         checkButton.style.display = "block";
         nextButton.style.display = "none";
-    }else{
+    } else {
         showMessage("Invalid bill amount entered.");
     }
 }
 
-function checkReturns() {
 
-    var billAmount = Number(billAmountInput.value);
-    var cashGiven = Number(cashGivenInput.value);
+const checkReturns = () => {
+
+    const billAmount = Number(billAmountInput.value);
+    const cashGiven = Number(cashGivenInput.value);
 
     hideMessage();
-    if (billAmount >0 && cashGiven >0) {
+    if (billAmount > 0 && cashGiven > 0) {
         if (cashGiven >= billAmount) {
-            var amountToGive = cashGiven - billAmount;
+            const amountToGive = cashGiven - billAmount;
             calculateNotes(amountToGive);
-               
-           } else {
-               showMessage("Do you wanna clean the dishes?");
-           }
+        } else {
+            showMessage("Do you wanna clean the dishes?");
+        }
     } else {
         showMessage("Invalid cash amount");
-        
-    }  
+
+    }
 }
 
-function calculateNotes(amountToGive) {
+
+const calculateNotes = amountToGive => {
     showMessage(`You have to give the customer ${amountToGive} INR`)
 
     for (const i in availableNotes) {
-        var note = Math.trunc(amountToGive / availableNotes[i]);
+        const note = Math.trunc(amountToGive / availableNotes[i]);
         amountToGive -= note * availableNotes[i];
-        noOfNotes[i].innerText = note;      
+        noOfNotes[i].innerText = note;
     }
-
     notesTable.style.display = "table";
-
 }
 
-function hideMessage() {
-    errorMessage.style.display = "none";
-}
+const hideMessage = () => errorMessage.style.display = "none";
 
-function showMessage(message) {
+const showMessage = message => {
     errorMessage.style.display = "block";
-
     errorMessage.innerText = message;
 }
 
+nextButton.addEventListener("click", showFields);
+checkButton.addEventListener("click", checkReturns)
